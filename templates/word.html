@@ -1,0 +1,245 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+
+<div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header class="site-navbar site-navbar-target" role="banner">
+
+        <div class="container mb-3">
+            <div class="d-flex align-items-center">
+                <div class="site-logo mr-auto">
+                    <a href="{% static 'index.html">Brailearn<span class="text-primary">.</span></a>
+                    </div>
+                    <div class="site-quick-contact d-none d-lg-flex ml-auto ">
+                        <div class="d-flex site-info align-items-center mr-5">
+                            <span class="block-icon mr-3"><span class="icon-map-marker text-yellow"></span></span>
+                            <span>Aceh,<br>Indonesia</span>
+                        </div>
+                        <div class="d-flex site-info align-items-center">
+                            <span class="block-icon mr-3"><span class="icon-clock-o"></span></span>
+                            <span>Developed on May,<br>2020</span>
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="menu-wrap d-flex align-items-center">
+                    <span class="d-inline-block d-lg-none"><a href="#"
+                            class="text-black site-menu-toggle js-menu-toggle py-5"><span
+                                class="icon-menu h3 text-black"></span></a></span>
+
+                    <nav class="site-navigation text-left mr-auto d-none d-lg-block" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav mr-auto ">
+                            <li class=""><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                    <li class="active"><a href=" {% url 'word' %}" class="nav-link">Word</a></li>
+                    <li><a href="{% url 'tips' %}" class="nav-link">Tips Braille</a></li>
+                    <li><a href="{% url 'forum' %}" class="nav-link">Forum</a></li>
+                    </ul>
+                    </nav>
+                    {% if user.is_authenticated %}
+                    <div class=" top-social ml-auto">
+                        <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                    </div>
+
+                    {% else %} <div class="top-social ml-auto">
+                        <a class="btn btn-primary" href="{% url 'login' %}">Login</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+    </header>
+
+    <div class="ftco-blocks-cover-1">
+
+        <div class="site-section-cover overlay">
+            <div class="container">
+                <div class="row align-items-center ">
+                    <div class="col-md-5 mt-5 pt-5">
+                        {% if user.is_authenticated %}
+                        <span class="text-cursive h5 text-red">Welcome To Our Website</span>
+                        <h1 class="mb-3 font-weight-bold text-teal">{{user.username}}</h1>
+                        <p class="mt-5"><a href="#" class="btn btn-primary py-4 btn-custom-1">Scroll Down For A-Z , 0-9
+                                Braille</a>
+                        </p>
+                        {% else %}
+                        <p>Login First</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            {% if user.is_authenticated %}
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/a.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/b.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/c.PNG'%}" alt="">
+                </div>
+            </div><br>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/d.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/e.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/f.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/g.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/h.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/i.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/j.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/k.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/l.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/m.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/n.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/o.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/p.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/q.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/r.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/s.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/t.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/u.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/v.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/w.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/x.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/y.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/z.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/0.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/1.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/2.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/3.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/4.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/5.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/6.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/7.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/8.PNG'%}" alt="">
+                </div>
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/9.PNG'%}" alt="">
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4">
+                    <img src="{% static 'alfabet/#.PNG'%}" alt="">
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.0.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.sticky.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.min.js' %}"></script>
+<script src="{% static 'js/aos.js' %}"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}
